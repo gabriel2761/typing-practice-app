@@ -9,4 +9,10 @@ App.prototype.initialize = function() {
         console.log(key);
         self.letters.input(key);
     });
+
+    self.letters.initialize();
+};
+
+App.prototype.render = function() {
+    this.letters.render();
 };
