@@ -1,13 +1,12 @@
 html,
 body {
-  font-family: "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: Inconsolata; }
 
 #letters {
   margin: 140px auto;
   width: 800px; }
   #letters .letter {
-    font-size: 28px;
-    margin: 0.5px; }
+    font-size: 28px; }
   #letters .letter.mark {
     color: blue; }
   #letters .letter.underline {
