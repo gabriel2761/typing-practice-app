@@ -7,12 +7,22 @@ var Letters = function() {
 };
 
 Letters.prototype.input = function(key) {
-    var last = this.letters[this.letters.length - 1];
+    var last = this.getLast();
     if (this.letters.length !== 0 && last.matches(key)) {
         console.log('match');
         last.mark();
+        last.removeUnderline();
         this.letters.pop();
+        this.underlineLast();
     }
+};
+
+Letters.prototype.getLast = function() {
+    return this.letters[this.letters.length - 1];
+};
+
+Letters.prototype.underlineLast = function() {
+    this.getLast().underline();
 };
 
 Letters.prototype.initialize = function() {
@@ -20,6 +30,7 @@ Letters.prototype.initialize = function() {
     this.values.forEach(function(value) {
         self.letters.push(new Letter(value));
     });
+    this.underlineLast();
 };
 
 Letters.prototype.render = function() {

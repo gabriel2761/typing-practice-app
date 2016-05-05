@@ -15,3 +15,11 @@ Letter.prototype.mark = function() {
 Letter.prototype.render = function() {
    this.letters.prepend(this.element);
 };
+
+Letter.prototype.underline = function() {
+    this.element.addClass('underline');
+};
+
+Letter.prototype.removeUnderline = function() {
+    this.element.removeClass('underline');
+};

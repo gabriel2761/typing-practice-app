@@ -10,5 +10,7 @@ body {
     margin: 0.5px; }
   #letters .letter.mark {
     color: blue; }
+  #letters .letter.underline {
+    border-bottom: 2px solid purple; }
 
 /*# sourceMappingURL=main.css.map */
