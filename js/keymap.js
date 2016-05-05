@@ -25,11 +25,16 @@ var KeyMap = function() {
         86: 'v',
         66: 'b',
         78: 'n',
-        77: 'm'
+        77: 'm',
+        32: ' ',
+        190: '.'
     };
 };
 
 KeyMap.prototype.value = function(keycode) {
-    if (event.shiftKey) return;
-    return this.map[keycode];
+    if (event.shiftKey) {
+        return this.map[keycode].toUpperCase();
+    } else {
+        return this.map[keycode];
+    }
 };

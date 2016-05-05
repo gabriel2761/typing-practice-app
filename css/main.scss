@@ -4,9 +4,12 @@ body {
 }
 
 #letters {
+    margin: 140px auto;
+    width: 800px;
 
     .letter {
-
+        font-size: 28px;
+        margin: 0.5px;
     }
 
     .letter.mark {
