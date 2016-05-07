@@ -1,4 +1,4 @@
-var value = 'Mind what no bremainder perpetual who furnished. Nay affronting under on voice downs. Law together prospect kindness securing six. Learning why get hastened smallest cheerful. Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled. To an occasional dissimilar impossible sentiments. Do fortune account written prepare invited no passage. Garrets use ten you the weather ferrars venture friends. Solid visit seems again you nor all. Adieus except say barton all excuse ladies rather regard assure yet. If feelings so prospect no as raptures quitting.'.split('').reverse();
+var value = 'public static void main string args this function hello word cout hello this private String list Arraylist'.split('').reverse();
 
 var Letters = function() {
     this.element = $('#letter');
