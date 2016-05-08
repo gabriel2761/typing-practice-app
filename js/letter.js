@@ -13,8 +13,12 @@ Letter.prototype.matches = function(letter) {
     return this.letter === letter;
 };
 
-Letter.prototype.mark = function() {
-    this.element.addClass('mark');
+Letter.prototype.markIncorrect = function() {
+    this.element.addClass('mark-incorrect');
+};
+
+Letter.prototype.markCorrect = function() {
+    this.element.addClass('mark-correct');
 };
 
 Letter.prototype.render = function() {

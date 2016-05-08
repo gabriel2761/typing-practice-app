@@ -9,9 +9,10 @@ var Letters = function() {
 Letters.prototype.input = function(letter) {
     var last = this.getLast();
     if (this.letters.length !== 0 && last.matches(letter)) {
-        last.mark();
+        last.markCorrect();
     } else {
         last.change(letter);
+        last.markIncorrect();
     }
     last.removeUnderline();
     this.letters.pop();

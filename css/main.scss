@@ -11,8 +11,12 @@ body {
         font-size: 28px;
     }
 
-    .letter.mark {
+    .letter.mark-correct {
         color: blue;
+    }
+
+    .letter.mark-incorrect {
+        color: red;
     }
 
     .letter.underline {
