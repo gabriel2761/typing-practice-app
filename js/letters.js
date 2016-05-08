@@ -6,15 +6,16 @@ var Letters = function() {
     this.letters = [];
 };
 
-Letters.prototype.input = function(key) {
+Letters.prototype.input = function(letter) {
     var last = this.getLast();
-    if (this.letters.length !== 0 && last.matches(key)) {
-        console.log('match');
+    if (this.letters.length !== 0 && last.matches(letter)) {
         last.mark();
-        last.removeUnderline();
-        this.letters.pop();
-        this.underlineLast();
+    } else {
+        last.change(letter);
     }
+    last.removeUnderline();
+    this.letters.pop();
+    this.underlineLast();
 };
 
 Letters.prototype.getLast = function() {

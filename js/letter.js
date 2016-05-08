@@ -1,11 +1,16 @@
 var Letter = function(letter) {
-    this.key = letter;
+    this.letter = letter;
     this.element = $('<span class="letter">'+letter+'</span>');
     this.letters = $('#letters');
 };
 
-Letter.prototype.matches = function(key) {
-    return this.key === key;
+Letter.prototype.change = function(letter) {
+    this.element.empty();
+    this.element.append(letter);
+};
+
+Letter.prototype.matches = function(letter) {
+    return this.letter === letter;
 };
 
 Letter.prototype.mark = function() {
