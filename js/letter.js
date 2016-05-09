@@ -9,6 +9,11 @@ Letter.prototype.change = function(letter) {
     this.element.append(letter);
 };
 
+Letter.prototype.changeBack = function() {
+    this.element.empty();
+    this.element.append(this.letter);
+};
+
 Letter.prototype.matches = function(letter) {
     return this.letter === letter;
 };
@@ -19,6 +24,12 @@ Letter.prototype.markIncorrect = function() {
 
 Letter.prototype.markCorrect = function() {
     this.element.addClass('mark-correct');
+};
+
+Letter.prototype.markNormal = function() {
+    this.element.removeClass('mark-incorrect');
+    this.element.removeClass('mark-correct');
+    this.element.addClass('mark-normal');
 };
 
 Letter.prototype.render = function() {

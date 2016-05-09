@@ -6,8 +6,17 @@ var App = function() {
 App.prototype.initialize = function() {
     var self = this;
     this.keys.listen(function(key) {
+
+        switch(key) {
+            case 'backspace':
+                self.letters.backspace();
+                break;
+            default:
+                self.letters.input(key);
+                break;
+        }
+
         console.log(key);
-        self.letters.input(key);
     });
 
     self.letters.initialize();

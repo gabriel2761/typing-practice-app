@@ -27,7 +27,8 @@ var KeyMap = function() {
         78: 'n',
         77: 'm',
         32: ' ',
-        190: '.'
+        190: '.',
+        8: 'backspace'
     };
 };
 

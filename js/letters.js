@@ -4,6 +4,17 @@ var Letters = function() {
     this.element = $('#letter');
     this.values = value;
     this.letters = [];
+    this.typed = [];
+};
+
+Letters.prototype.backspace = function() {
+    var last = this.getLast();
+    var letter = this.typed.pop();
+    last.removeUnderline();
+    this.letters.push(letter);
+    letter.changeBack();
+    letter.markNormal();
+    this.underlineLast();
 };
 
 Letters.prototype.input = function(letter) {
@@ -15,7 +26,7 @@ Letters.prototype.input = function(letter) {
         last.markIncorrect();
     }
     last.removeUnderline();
-    this.letters.pop();
+    this.typed.push(this.letters.pop());
     this.underlineLast();
 };
 
