@@ -8,6 +8,7 @@ var Letters = function() {
 };
 
 Letters.prototype.backspace = function() {
+    if (this.typed.length === 0) return;
     var last = this.getLast();
     var letter = this.typed.pop();
     last.removeUnderline();
