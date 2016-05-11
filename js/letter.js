@@ -1,21 +1,21 @@
-var Letter = function(letter) {
-    this.letter = letter;
-    this.element = $('<span class="letter">'+letter+'</span>');
+var Letter = function(value) {
+    this.value = value;
+    this.element = $('<span class="letter">'+value+'</span>');
     this.letters = $('#letters');
 };
 
-Letter.prototype.change = function(letter) {
+Letter.prototype.change = function(value) {
     this.element.empty();
-    this.element.append(letter);
+    this.element.append(value);
 };
 
 Letter.prototype.changeBack = function() {
     this.element.empty();
-    this.element.append(this.letter);
+    this.element.append(this.value);
 };
 
-Letter.prototype.matches = function(letter) {
-    return this.letter === letter;
+Letter.prototype.matches = function(value) {
+    return this.value === value;
 };
 
 Letter.prototype.markIncorrect = function() {

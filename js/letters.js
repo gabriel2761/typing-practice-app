@@ -27,13 +27,13 @@ Letters.prototype.backspace = function() {
     this.underlineLast();
 };
 
-Letters.prototype.input = function(letter) {
+Letters.prototype.input = function(value) {
     if (letters.length === 0) this.resetLetters();
     var last = this.getLast();
-    if (this.letters.length !== 0 && last.matches(letter)) {
+    if (this.letters.length !== 0 && last.matches(value)) {
         last.markCorrect();
     } else {
-        last.change(letter);
+        last.change(value);
         last.markIncorrect();
     }
     last.removeUnderline();
