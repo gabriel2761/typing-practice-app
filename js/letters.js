@@ -10,9 +10,9 @@ Letters.prototype.refreshWords = function() {
     self.wordbank.getRandomWords().forEach(function(value) {
         self.letters.push(new Letter(value));
     });
-    this.underlineLast();
-    this.typed = [];
-    this.render();
+    self.underlineLast();
+    self.typed = [];
+    self.render();
 };
 
 Letters.prototype.backspace = function() {
