@@ -1,15 +1,13 @@
 var Letters = function() {
     this.element = $('#letters');
     this.wordbank = new WordBank();
-    this.values = [];
     this.letters = [];
     this.typed = [];
 };
 
 Letters.prototype.refreshWords = function() {
     var self = this;
-    self.values = this.wordbank.getRandomWords();
-    self.values.forEach(function(value) {
+    self.wordbank.getRandomWords().forEach(function(value) {
         self.letters.push(new Letter(value));
     });
     this.underlineLast();
