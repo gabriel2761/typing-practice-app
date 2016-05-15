@@ -1,6 +1,9 @@
 var WordBank = function() {
-    this.words = app.words.split(' ');
+    this.two = app.two.split(' ');
+
+    this.words = this.two;
 };
+
 
 WordBank.prototype.getRandomWords = function() {
     var words = '';
