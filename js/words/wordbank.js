@@ -1,5 +1,5 @@
 var WordBank = function() {
-    this.two = app.two.split(' ');
+    this.two = app.four.split(' ');
 
     this.words = this.two;
 };

@@ -1,6 +1,7 @@
 var App = function() {
     this.keys = new Keys();
     this.letters = new Letters();
+    this.$focus = $('#focus');
 };
 
 App.prototype.initialize = function() {
@@ -17,6 +18,8 @@ App.prototype.initialize = function() {
         }
 
         console.log(key);
+        self.$focus.focus();
+        self.$focus.val('');
     });
 
     self.letters.initialize();
