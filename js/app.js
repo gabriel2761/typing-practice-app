@@ -12,6 +12,8 @@ App.prototype.initialize = function() {
             case 'backspace':
                 self.letters.backspace();
                 break;
+            case undefined:
+                break;
             default:
                 self.letters.input(key);
                 break;
