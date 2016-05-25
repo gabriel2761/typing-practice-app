@@ -32,8 +32,8 @@ var KeyMap = function() {
     };
 };
 
-KeyMap.prototype.value = function(keycode) {
-    if (event.shiftKey) {
+KeyMap.prototype.value = function(keycode, shiftKey) {
+    if (shiftKey) {
         return this.map[keycode].toUpperCase();
     } else {
         return this.map[keycode];

@@ -5,7 +5,7 @@ var Keys = function() {
 Keys.prototype.listen = function(callback) {
     var self = this;
     $(document).keydown(function(event) {
-        var key = self.keymap.value(event.keyCode);
+        var key = self.keymap.value(event.keyCode, event.shiftKey);
         callback(key);
     });
 };
