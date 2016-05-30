@@ -19,7 +19,11 @@ Letter.prototype.matches = function(value) {
 };
 
 Letter.prototype.markIncorrect = function() {
-    this.element.addClass('mark-incorrect');
+    if (this.element.text() === ' ') {
+        this.element.addClass('underline-red');
+    } else {
+        this.element.addClass('mark-incorrect');
+    }
 };
 
 Letter.prototype.markCorrect = function() {
@@ -29,7 +33,7 @@ Letter.prototype.markCorrect = function() {
 Letter.prototype.markNormal = function() {
     this.element.removeClass('mark-incorrect');
     this.element.removeClass('mark-correct');
-    this.element.addClass('mark-normal');
+    this.element.removeClass('underline-red');
 };
 
 Letter.prototype.render = function() {
