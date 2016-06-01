@@ -26,7 +26,7 @@ Letters.prototype.backspace = function() {
     this.underlineLast();
 };
 
-Letters.prototype.input = function(value) {
+Letters.prototype.input = function(value, mistake) {
     if (letters.length === 0) this.resetLetters();
     var last = this.getLast();
     if (this.letters.length !== 0 && last.matches(value)) {
@@ -34,6 +34,10 @@ Letters.prototype.input = function(value) {
     } else {
         last.change(value);
         last.markIncorrect();
+        mistake({
+            'letter': last.value,
+            'mistake': value
+        });
     }
     last.removeUnderline();
     this.typed.push(this.letters.pop());

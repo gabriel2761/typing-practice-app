@@ -1,6 +1,7 @@
 var App = function() {
     this.keys = new Keys();
     this.letters = new Letters();
+    this.mistakes = new Mistakes();
     this.$focus = $('#focus');
 };
 
@@ -15,7 +16,7 @@ App.prototype.initialize = function() {
             case undefined:
                 break;
             default:
-                self.letters.input(key);
+                self.input(key);
                 break;
         }
 
@@ -25,6 +26,15 @@ App.prototype.initialize = function() {
     });
 
     self.letters.initialize();
+};
+
+App.prototype.input = function(key) {
+    var self = this;
+    self.letters.input(key, function(mistake) {
+        self.mistakes.addMistake(mistake);
+        self.mistakes.updateMistakeCount();
+        console.log(mistake);
+    });
 };
 
 App.prototype.render = function() {
