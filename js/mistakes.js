@@ -1,5 +1,6 @@
 var Mistakes = function() {
-    this.$element = $('#mistakes');
+    this.$mistakeCount = $('#mistake-count');
+    this.$mistakeLetters = $('#mistake-letters');
     this.mistakes = [];
 };
 
@@ -8,8 +9,16 @@ Mistakes.prototype.addMistake = function(letter, error) {
 };
 
 Mistakes.prototype.updateMistakeCount = function() {
-    this.$element.text('Mistakes: ' + this.mistakes.length);
+    this.$mistakeCount.text('Mistakes: ' + this.mistakes.length);
 };
+
+Mistakes.prototype.updateLetterMistakes = function() {
+    var self = this;
+    self.$mistakeLetters.empty();
+    self.mistakes.forEach(function(mistake) {
+        self.$mistakeLetters.append('<p>' + mistake.letter + ' -> ' + mistake.mistake +'</p>');
+    });
+}
 
 var Mistake = function(mistake) {
     this.letter = mistake.letter;
