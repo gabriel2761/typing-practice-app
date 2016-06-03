@@ -5,7 +5,17 @@ var Mistakes = function() {
 };
 
 Mistakes.prototype.addMistake = function(mistake) {
-    this.mistakes.push(mistake);
+    var foundMistake = false;
+    this.mistakes.forEach(function(value) {
+        if (mistake.letter === value.letter) {
+            value.addMistake(mistake.mistake);
+            foundMistake = true;
+        }
+    });
+
+    if (!foundMistake) {
+        this.mistakes.push(new Mistake(mistake));
+    }
 };
 
 Mistakes.prototype.updateMistakeCount = function() {
@@ -18,10 +28,14 @@ Mistakes.prototype.updateLetterMistakes = function() {
     self.mistakes.forEach(function(mistake) {
         self.$mistakeLetters.append('<p>' + mistake.letter + ' -> ' + mistake.mistake +'</p>');
     });
-}
+};
 
 var Mistake = function(mistake) {
     this.letter = mistake.letter;
-    this.mistake = mistake.mistake;
-    this.count = 0; 
+    this.mistake = [];
+    this.mistake.push(mistake.mistake);
+};
+
+Mistake.prototype.addMistake = function(mistake) {
+    this.mistake.push(mistake);
 };
