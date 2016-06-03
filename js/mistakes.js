@@ -19,7 +19,11 @@ Mistakes.prototype.addMistake = function(mistake) {
 };
 
 Mistakes.prototype.updateMistakeCount = function() {
-    this.$mistakeCount.text('Mistakes: ' + this.mistakes.length);
+    var count = 0;
+    this.mistakes.forEach(function(mistake) {
+        count += mistake.mistake.length;
+    });
+    this.$mistakeCount.text('Mistakes: ' + count);
 };
 
 Mistakes.prototype.updateLetterMistakes = function() {
