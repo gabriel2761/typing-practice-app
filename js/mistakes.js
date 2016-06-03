@@ -25,6 +25,9 @@ Mistakes.prototype.updateMistakeCount = function() {
 Mistakes.prototype.updateLetterMistakes = function() {
     var self = this;
     self.$mistakeLetters.empty();
+    self.mistakes.sort(function(a, b) {
+        return b.mistake.length - a.mistake.length;
+    });
     self.mistakes.forEach(function(mistake) {
         self.$mistakeLetters.append('<p>' + mistake.letter + ' -> ' + mistake.mistake +'</p>');
     });
