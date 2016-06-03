@@ -21,7 +21,7 @@ Mistakes.prototype.addMistake = function(mistake) {
 Mistakes.prototype.updateMistakeCount = function() {
     var count = 0;
     this.mistakes.forEach(function(mistake) {
-        count += mistake.mistake.length;
+        count += mistake.mistakes.length;
     });
     this.$mistakeCount.text('Mistakes: ' + count);
 };
@@ -30,19 +30,19 @@ Mistakes.prototype.updateLetterMistakes = function() {
     var self = this;
     self.$mistakeLetters.empty();
     self.mistakes.sort(function(a, b) {
-        return b.mistake.length - a.mistake.length;
+        return b.mistakes.length - a.mistakes.length;
     });
     self.mistakes.forEach(function(mistake) {
-        self.$mistakeLetters.append('<p>' + mistake.letter + ' -> ' + mistake.mistake +'</p>');
+        self.$mistakeLetters.append('<p>' + mistake.letter + ' -> ' + mistake.mistakes +'</p>');
     });
 };
 
 var Mistake = function(mistake) {
     this.letter = mistake.letter;
-    this.mistake = [];
-    this.mistake.push(mistake.mistake);
+    this.mistakes = [];
+    this.mistakes.push(mistake.mistake);
 };
 
 Mistake.prototype.addMistake = function(mistake) {
-    this.mistake.push(mistake);
+    this.mistakes.push(mistake);
 };
