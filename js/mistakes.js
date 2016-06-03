@@ -4,8 +4,8 @@ var Mistakes = function() {
     this.mistakes = [];
 };
 
-Mistakes.prototype.addMistake = function(letter, error) {
-    this.mistakes.push(new Mistake(letter, error));
+Mistakes.prototype.addMistake = function(mistake) {
+    this.mistakes.push(mistake);
 };
 
 Mistakes.prototype.updateMistakeCount = function() {
@@ -23,4 +23,5 @@ Mistakes.prototype.updateLetterMistakes = function() {
 var Mistake = function(mistake) {
     this.letter = mistake.letter;
     this.mistake = mistake.mistake;
+    this.count = 0; 
 };
