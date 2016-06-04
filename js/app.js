@@ -32,6 +32,7 @@ App.prototype.input = function(key) {
     var self = this;
     self.letters.input(key, function(mistake) {
         self.mistakes.addMistake(mistake);
+        self.mistakes.sortMistakes();
         self.mistakes.updateLetterMistakes();
         self.mistakes.updateMistakeCount();
     });

@@ -18,6 +18,13 @@ Mistakes.prototype.addMistake = function(mistake) {
     }
 };
 
+Mistakes.prototype.sortMistakes = function() {
+    var self = this;
+    self.mistakes.sort(function(a, b) {
+        return b.mistakes.length - a.mistakes.length;
+    });
+};
+
 Mistakes.prototype.updateMistakeCount = function() {
     var count = 0;
     this.mistakes.forEach(function(mistake) {
@@ -29,9 +36,6 @@ Mistakes.prototype.updateMistakeCount = function() {
 Mistakes.prototype.updateLetterMistakes = function() {
     var self = this;
     self.$mistakeLetters.empty();
-    self.mistakes.sort(function(a, b) {
-        return b.mistakes.length - a.mistakes.length;
-    });
     self.mistakes.forEach(function(mistake) {
         self.$mistakeLetters.append('<p>' + mistake.letter + ' -> ' + mistake.mistakes +'</p>');
     });
