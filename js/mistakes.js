@@ -9,6 +9,7 @@ Mistakes.prototype.addMistake = function(mistake) {
     this.mistakes.forEach(function(value) {
         if (mistake.letter === value.letter) {
             value.addMistake(mistake.mistake);
+            value.sortMistakes();
             foundMistake = true;
         }
     });
@@ -49,4 +50,35 @@ var Mistake = function(mistake) {
 
 Mistake.prototype.addMistake = function(mistake) {
     this.mistakes.push(mistake);
+};
+
+Mistake.prototype.sortMistakes = function() {
+    var self = this;
+    var temp = [];
+    var letter;
+    self.mistakes.sort();
+    self.mistakes.forEach(function(mistake) {
+        if (letter !== mistake) {
+            letter = mistake;
+            temp.push({ 
+                'letter': letter,
+                'count': 1
+            });
+        } else {
+            temp[temp.length - 1].count++;
+        }
+    })
+    temp.sort(function(a, b) {
+        return b.count - a.count;
+    });
+    self.mistakes.sort(function(a, b) {
+        var first;
+        var second;
+        for (var i = 0; i < temp.length; i++) {
+            if (temp[i].letter === a) first = i
+            if (temp[i].letter === b) second = i;
+        }
+        return first - second;
+    });
+    console.log(temp);
 };
