@@ -2,7 +2,9 @@ var App = function() {
     this.keys = new Keys();
     this.letters = new Letters();
     this.mistakes = new Mistakes();
+    this.typecount = 0;
     this.$focus = $('#focus');
+    this.$typecount = $("#type-count");
 };
 
 App.prototype.initialize = function() {
@@ -21,11 +23,21 @@ App.prototype.initialize = function() {
         }
 
         console.log(key);
+        self.incrementTypeCount(key);
         self.$focus.focus();
         self.$focus.val('');
     });
 
     self.letters.initialize();
+};
+
+App.prototype.incrementTypeCount = function(key) {
+    if (key === 'backspace') {
+        this.typecount--;
+    } else {
+        this.typecount++;
+    }
+    this.$typecount.text('Letters typed: ' + this.typecount);
 };
 
 App.prototype.input = function(key) {
