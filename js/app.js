@@ -2,6 +2,7 @@ var App = function() {
     this.keys = new Keys();
     this.letters = new Letters();
     this.mistakes = new Mistakes();
+    this.settings = new Settings();
     this.typecount = 0;
     this.$focus = $('#focus');
     this.$typecount = $("#type-count");
@@ -52,4 +53,5 @@ App.prototype.input = function(key) {
 
 App.prototype.render = function() {
     this.letters.render();
+    this.settings.renderListener();
 };

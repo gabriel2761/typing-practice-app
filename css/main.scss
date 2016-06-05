@@ -13,6 +13,10 @@ body {
     .underline-red {
         border-bottom: 1px solid red;
     }
+
+    .hidden {
+        visibility: hidden;
+    }
 }
 
 .typing-info {
@@ -30,7 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    #settings {
+    #settings-button {
         color: #fff;
         cursor: pointer;
     }
@@ -59,5 +63,19 @@ body {
 
     .letter.underline {
         border-bottom: 2px solid purple;
+    }
+}
+
+#settings-view {
+    position: absolute;
+    top: 100px;
+    margin-left: 10%;
+    width: 80vw;
+    height: 80vh;
+    box-shadow: 0 4px 18px #555;
+    background-color: #fff;
+    z-index: 100;
+    .settings-title {
+        margin: 32px 50px;
     }
 }
