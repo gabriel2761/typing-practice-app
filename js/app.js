@@ -12,6 +12,8 @@ App.prototype.initialize = function() {
     var self = this;
     this.keys.listen(function(key) {
 
+        if (self.settings.isVisible()) return;
+
         switch(key) {
             case 'backspace':
                 self.letters.backspace();
