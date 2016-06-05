@@ -99,13 +99,14 @@ body {
     }
     #input-text {
         padding: 12px;
-        border: 3px solid #448AFF;
-        color: #448AFF;
+        border: 3px solid #673AB7;
+        color: #673AB7;
         font-size: 18px;
+        font-weight: 600;
         background-color: #fff;
     }
     #input-text:hover {
-        background-color: #448AFF;
+        background-color: #673AB7;
         color: #fff;
         cursor: pointer;
     }
