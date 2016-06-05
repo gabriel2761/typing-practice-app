@@ -21,10 +21,19 @@ body {
 
 .navbar {
     margin: 0;
-    padding: 0;
-    height: 40px;
-    width: 100%;
+    height: 60px;
+    padding: 0 30px;
+    width: calc(100% - 60px);
     background-color: #455A64;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    #settings {
+        color: #fff;
+        cursor: pointer;
+    }
 }
 
 #letters {
