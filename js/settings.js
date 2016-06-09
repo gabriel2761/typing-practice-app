@@ -28,6 +28,9 @@ Settings.prototype.setCustomTextListener = function(customText) {
     var self = this;
     self.$inputCustomTextButton.click(function() {
         customText(self.$customTextArea.val());
+        self.$settingsView.addClass('hidden');
+        self.visible = false;
+        $(document).click();
     });
 };
 
