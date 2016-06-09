@@ -3,6 +3,19 @@ var Letters = function() {
     this.wordbank = new WordBank();
     this.letters = [];
     this.typed = [];
+    this.settings;
+};
+
+Letters.prototype.attachSettings = function(settings) {
+    var self = this;
+    self.settings = settings;
+    self.settings.setCustomTextListener(function(customText) {
+        self.letters = [];
+        customText.split('').reverse().forEach(function(letter) {
+            self.letters.push(new Letter(letter));
+        });
+        self.render();
+    });
 };
 
 Letters.prototype.refreshWords = function() {
@@ -13,6 +26,12 @@ Letters.prototype.refreshWords = function() {
     self.underlineLast();
     self.typed = [];
     self.render();
+};
+
+Letters.prototype.getNextLetters = function() {
+    for (var i = amount; i >= 0; i++) {
+        this.letters.push(this.letters.pop());
+    }
 };
 
 Letters.prototype.backspace = function() {
@@ -41,7 +60,10 @@ Letters.prototype.input = function(value, mistake) {
     }
     last.removeUnderline();
     this.typed.push(this.letters.pop());
-    if (this.letters.length === 0) this.refreshWords();
+    if (this.letters.length === 0) {
+        this.getNextLetters();
+       // this.refreshWords();    
+    }
     this.underlineLast();
 };
 

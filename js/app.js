@@ -32,6 +32,7 @@ App.prototype.initialize = function() {
     });
 
     self.letters.initialize();
+    self.letters.attachSettings(self.settings);
 };
 
 App.prototype.incrementTypeCount = function(key) {
