@@ -31,8 +31,8 @@ App.prototype.initialize = function() {
         self.$focus.val('');
     });
 
-    self.letters.initialize();
     self.letters.attachSettings(self.settings);
+    self.letters.initialize();
 };
 
 App.prototype.incrementTypeCount = function(key) {

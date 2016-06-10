@@ -6,32 +6,36 @@ var Letters = function() {
     this.settings;
 };
 
+Letters.prototype.initialize = function() {
+    this.refreshWords();
+};
+
 Letters.prototype.attachSettings = function(settings) {
     var self = this;
     self.settings = settings;
     self.settings.setCustomTextListener(function(customText) {
         self.letters = [];
-        customText.split('').reverse().forEach(function(letter) {
-            self.letters.push(new Letter(letter));
-        });
+        self.wordbank.setWords(customText);
+        self.refreshWords();
         self.render();
     });
 };
 
 Letters.prototype.refreshWords = function() {
     var self = this;
-    self.wordbank.getRandomWords().forEach(function(value) {
+    var words;
+    if (this.settings.isUsingCustomText()) {
+        // TODO: Remove magic number
+        words = self.wordbank.getNextLetters(50);
+    } else {
+        words = self.wordbank.getRandomWords();
+    }
+    words.forEach(function(value) {
         self.letters.push(new Letter(value));
     });
     self.underlineLast();
     self.typed = [];
     self.render();
-};
-
-Letters.prototype.getNextLetters = function() {
-    for (var i = amount; i >= 0; i++) {
-        this.letters.push(this.letters.pop());
-    }
 };
 
 Letters.prototype.backspace = function() {
@@ -61,8 +65,7 @@ Letters.prototype.input = function(value, mistake) {
     last.removeUnderline();
     this.typed.push(this.letters.pop());
     if (this.letters.length === 0) {
-        this.getNextLetters();
-       // this.refreshWords();    
+        this.refreshWords();    
     }
     this.underlineLast();
 };
@@ -73,10 +76,6 @@ Letters.prototype.getLast = function() {
 
 Letters.prototype.underlineLast = function() {
     this.getLast().underline();
-};
-
-Letters.prototype.initialize = function() {
-    this.refreshWords();
 };
 
 Letters.prototype.render = function() {

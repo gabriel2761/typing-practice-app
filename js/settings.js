@@ -3,7 +3,7 @@ var Settings = function() {
     this.$settingsButton = $('#settings-button');
     this.$customTextArea = $('#custom-text-area');
     this.$inputCustomTextButton = $('#input-custom-text-button');
-    this.usingCustomText = true;
+    this.usingCustomText = false;
     this.visible = false;
 };
 
@@ -27,10 +27,11 @@ Settings.prototype.renderListener = function() {
 Settings.prototype.setCustomTextListener = function(customText) {
     var self = this;
     self.$inputCustomTextButton.click(function() {
-        customText(self.$customTextArea.val());
         self.$settingsView.addClass('hidden');
         self.visible = false;
+        self.usingCustomText = true;
         $(document).click();
+        customText(self.$customTextArea.val());
     });
 };
 

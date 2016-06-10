@@ -1,9 +1,19 @@
 var WordBank = function() {
     this.two = app.four.split(' ');
-
     this.words = this.two;
 };
 
+WordBank.prototype.setWords = function(words) {
+    this.words = words.split('').reverse();
+};
+
+WordBank.prototype.getNextLetters = function(amount) {
+    var letters = [];
+    for (var i = 0; i < amount; i++) {
+        letters.push(this.words.pop());
+    }
+    return letters.reverse();
+};
 
 WordBank.prototype.getRandomWords = function() {
     var words = '';
