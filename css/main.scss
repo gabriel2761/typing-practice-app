@@ -79,6 +79,15 @@ body {
     box-sizing: border-box;
     padding: 16px 50px;
     z-index: 100;
+    .settings-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    #settings-exit-button {
+        font-size: 30px;
+        margin: 0;
+        margin-top: 10px;
+    }
     #custom-text-area {
         margin: 12px 0;
         width: calc(100% - 24px);
