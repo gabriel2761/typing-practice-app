@@ -4,7 +4,11 @@ var WordBank = function() {
 };
 
 WordBank.prototype.setWords = function(words) {
-    this.words = words.replace(/\n/g, ' ').split('').reverse();
+    this.words = words
+		.replace(/\n/g, ' ')
+		.replace(/ +(?= )/g, '')
+		.split('')
+		.reverse();
 };
 
 WordBank.prototype.getNextLetters = function(amount) {
