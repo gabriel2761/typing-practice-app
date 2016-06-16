@@ -12,6 +12,8 @@ WordBank.prototype.getNextLetters = function(amount) {
     for (var i = 0; i < amount; i++) {
         letters.push(this.words.pop());
     }
+	if (letters[0] == ' ') letters.shift;
+	if (letters[amount - 1]) letters.pop();
     return letters.reverse();
 };
 
