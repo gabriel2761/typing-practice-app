@@ -28,12 +28,15 @@ var KeyMap = function() {
         77: 'm',
         32: ' ',
         190: '.',
+		188: ',',
+		222: '"',
         8: 'backspace'
     };
 };
 
 KeyMap.prototype.value = function(keycode, shiftKey) {
     if (shiftKey) {
+		console.log('keycode ' + keycode);
         return this.map[keycode].toUpperCase();
     } else {
         return this.map[keycode];
