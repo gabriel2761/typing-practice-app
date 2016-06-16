@@ -22,6 +22,9 @@ Settings.prototype.renderListener = function() {
             self.visible = false;
         }
     });
+	$('#settings-exit-button').click(function() {
+		self.$settingsView.addClass('hidden');
+	});
 };
 
 Settings.prototype.setCustomTextListener = function(customText) {
