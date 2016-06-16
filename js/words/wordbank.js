@@ -4,7 +4,7 @@ var WordBank = function() {
 };
 
 WordBank.prototype.setWords = function(words) {
-    this.words = words.split('').reverse();
+    this.words = words.replace(/\n/g, ' ').split('').reverse();
 };
 
 WordBank.prototype.getNextLetters = function(amount) {
