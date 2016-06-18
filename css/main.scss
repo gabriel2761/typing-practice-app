@@ -1,3 +1,8 @@
+$dark-primary: #455a64;
+$primary-color: #607d8b;
+$primary-text: #121212;
+$secondary-text: #727272;
+
 html,
 body {
     margin: 0;
@@ -84,11 +89,17 @@ body {
         justify-content: space-between;
     }
     #settings-exit-button {
+		height: 32px;
         font-size: 30px;
         margin: 0;
-        margin-top: 10px;
+		font-size: 32px;
+		color: $secondary-text;
+		padding: 12px;
 		cursor: pointer;
     }
+	#settings-exit-button:hover {
+		color: #000;
+	}
     #custom-text-area {
         margin: 12px 0;
         width: calc(100% - 24px);
