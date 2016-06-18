@@ -24,9 +24,15 @@ Letters.prototype.attachSettings = function(settings) {
 Letters.prototype.refreshWords = function() {
     var self = this;
     var words;
-    if (this.settings.isUsingCustomText()) {
+    if (self.settings.isUsingCustomText()) {
         // TODO: Remove magic number
-        words = self.wordbank.getNextLetters(50);
+        if (self.wordbank.hasWords()) {
+            words = self.wordbank.getNextLetters(50);
+        } else {
+            self.settings.turnOffCustomText();
+            self.wordbank.setWordsRandom();
+            words = self.wordbank.getRandomWords();
+        }
     } else {
         words = self.wordbank.getRandomWords();
     }

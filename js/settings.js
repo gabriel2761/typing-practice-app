@@ -7,6 +7,10 @@ var Settings = function() {
     this.visible = false;
 };
 
+Settings.prototype.turnOffCustomText = function() {
+    this.usingCustomText = false;
+};
+
 Settings.prototype.isUsingCustomText = function() {
     return this.usingCustomText;
 };

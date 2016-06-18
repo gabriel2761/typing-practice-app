@@ -1,6 +1,12 @@
+
 var WordBank = function() {
+    this.app = app || {};
     this.two = app.four.split(' ');
     this.words = this.two;
+};
+
+WordBank.prototype.hasWords = function() {
+    return this.words.length != 0;
 };
 
 WordBank.prototype.setWords = function(words) {
@@ -11,13 +17,20 @@ WordBank.prototype.setWords = function(words) {
 		.reverse();
 };
 
+WordBank.prototype.setWordsRandom = function() {
+    this.words = this.app.four.split(' ');
+};
+
 WordBank.prototype.getNextLetters = function(amount) {
     var letters = [];
+    if (this.words.length < amount) {
+         amount = this.words.length;
+    }
     for (var i = 0; i < amount; i++) {
         letters.push(this.words.pop());
     }
 	if (letters[0] == ' ') letters.shift;
-	if (letters[amount - 1]) letters.pop();
+	if (letters[amount - 1] == ' ') letters.pop();
     return letters.reverse();
 };
 
