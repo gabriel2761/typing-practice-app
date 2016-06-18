@@ -19,6 +19,12 @@ body {
     .hidden {
         visibility: hidden;
     }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
 }
 
 .typing-info {
@@ -100,6 +106,11 @@ body {
 	#settings-exit-button:hover {
 		color: #000;
 	}
+    .word-range-input {
+         width: 40px;
+         padding: 8px;
+         font-size: 22px;
+    }
     #custom-text-area {
         margin: 12px 0;
         width: calc(100% - 24px);

@@ -3,6 +3,8 @@ var Settings = function() {
     this.$settingsButton = $('#settings-button');
     this.$customTextArea = $('#custom-text-area');
     this.$inputCustomTextButton = $('#input-custom-text-button');
+    this.$highestRangeInput = $('#highest');
+    this.$lowestRangeInput = $('#lowest');
     this.usingCustomText = false;
     this.visible = false;
 };
