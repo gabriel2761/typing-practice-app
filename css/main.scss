@@ -95,27 +95,36 @@ body {
         justify-content: space-between;
     }
     #settings-exit-button {
-		height: 32px;
+        height: 32px;
         font-size: 30px;
         margin: 0;
-		font-size: 32px;
-		color: $secondary-text;
-		padding: 12px;
-		cursor: pointer;
+        font-size: 32px;
+        color: $secondary-text;
+        padding: 12px;
+        cursor: pointer;
     }
-	#settings-exit-button:hover {
-		color: #000;
-	}
+    #settings-exit-button:hover {
+        color: #000;
+    }
     #max-range-container {
-         margin-right: 12px;
+        margin-right: 12px;
     }
     .word-range-input-container {
         display: flex;
     }
     .word-range-input {
-         width: 40px;
-         padding: 8px;
-         font-size: 22px;
+        width: 40px;
+        padding: 8px;
+        font-size: 22px;
+    }
+    .range-container {
+        display: flex;
+        padding: 4px;
+
+        .arrow {
+            padding: 8px;
+            font-size: 22px;
+        }
     }
     #custom-text-area {
         margin: 12px 0;

@@ -29,13 +29,21 @@
             <p id="settings-exit-button">x</p>
         </div>
         <div class="word-range-input-container">
-            <div id="max-range-container">
+            <div id="min-range-container">
                 <p>min letters</p>
-                <input id="min-letters" class="word-range-input two-numbers" value="3">
+                <div class="range-container">
+                    <p id="min-range-decrement" class="arrow"><</p>
+                    <input id="min-letters" class="word-range-input two-numbers" value="3">
+                    <p id="min-range-increment" class="arrow">></p>
+                </div>
             </div>
-            <div id="mix-range-container">
+            <div id="max-range-container">
                 <p>max letters</p>
-                <input id="max-letters" class="word-range-input two-numbers" value="6">
+                <div class="range-container">
+                    <p id="max-range-decrement" class="arrow"><</p>
+                    <input id="max-letters" class="word-range-input two-numbers" value="6">
+                    <p id="max-range-decrement" class="arrow">></p>
+                </div>
             </div>
         </div>
         <textarea id="custom-text-area" placeholder="Paste text here"></textarea>
