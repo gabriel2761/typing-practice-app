@@ -28,8 +28,16 @@
             <h2 class="settings-title">Settings</h2>
             <p id="settings-exit-button">x</p>
         </div>
-        <input id="highest" class="word-range-input two-numbers">
-        <input id="lowest" class="word-range-input two-numbers">
+        <div class="word-range-input-container">
+            <div id="max-range-container">
+                <p>min letters</p>
+                <input id="min-letters" class="word-range-input two-numbers">
+            </div>
+            <div id="mix-range-container">
+                <p>max letters</p>
+                <input id="max-letters" class="word-range-input two-numbers">
+            </div>
+        </div>
         <textarea id="custom-text-area" placeholder="Paste text here"></textarea>
         <button id="input-custom-text-button" type="submit">Use Text</button>
     </section>
