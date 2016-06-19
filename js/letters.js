@@ -19,6 +19,9 @@ Letters.prototype.attachSettings = function(settings) {
         self.refreshWords();
         self.render();
     });
+    self.settings.setLetterRange(function(range) {
+        console.log(range);
+    });
 };
 
 Letters.prototype.refreshWords = function() {

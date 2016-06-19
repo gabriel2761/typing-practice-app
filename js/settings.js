@@ -3,6 +3,7 @@ var Settings = function() {
     this.$settingsButton = $('#settings-button');
     this.$customTextArea = $('#custom-text-area');
     this.$inputCustomTextButton = $('#input-custom-text-button');
+    this.$settingsExitButton = $('#settings-exit-button');
     this.$highestRangeInput = $('#highest');
     this.$lowestRangeInput = $('#lowest');
     this.usingCustomText = false;
@@ -19,7 +20,7 @@ Settings.prototype.isUsingCustomText = function() {
 
 Settings.prototype.renderListener = function() {
     var self = this;
-    this.$settingsButton.click(function() {
+    self.$settingsButton.click(function() {
         if (self.$settingsView.hasClass('hidden')) {
             self.$settingsView.removeClass('hidden');
             self.visible = true;
@@ -28,7 +29,7 @@ Settings.prototype.renderListener = function() {
             self.visible = false;
         }
     });
-	$('#settings-exit-button').click(function() {
+	self.$settingsExitButton.click(function() {
 		self.$settingsView.addClass('hidden');
 	});
 };
@@ -42,6 +43,22 @@ Settings.prototype.setCustomTextListener = function(customText) {
         $(document).click();
         customText(self.$customTextArea.val());
     });
+};
+
+Settings.prototype.setLetterRange = function(range) {
+    var self = this;
+    var minletters = $('#min-letters');
+    var maxletters = $('#max-letters');
+    self.$settingsExitButton.click(sendRange);
+    self.$settingsButton.click(sendRange);
+    function sendRange() {
+        if (!self.$settingsView.hasClass('hidden')) {
+            range({
+                'min': minletters.val(),
+                'max': maxletters.val()
+            });
+        }
+    }
 };
 
 Settings.prototype.isVisible = function() {
