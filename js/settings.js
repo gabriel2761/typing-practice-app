@@ -59,6 +59,22 @@ Settings.prototype.setLetterRange = function(range) {
             });
         }
     }
+    $('.two-numbers').keyup(function() {
+        this.value = this.value.replace(/[^0-9\.]/g,'');
+        if (this.value >= 13) {
+            this.value = 13;
+        }
+    }).keydown(function() {
+        if (this.value.length >= 2) {
+            this.value = Math.floor(this.value/10);
+        }
+    });
+    $('#min-letters').keyup(function() {
+        console.log('min');
+    });
+    $('#max-letters').keyup(function() {
+        console.log('max');
+    });
 };
 
 Settings.prototype.isVisible = function() {

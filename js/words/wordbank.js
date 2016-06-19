@@ -1,8 +1,13 @@
-
 var WordBank = function() {
     this.app = app || {};
-    this.two = app.four.split(' ');
-    this.words = this.two;
+    var start = '';
+    for (var i = 1; i <= 3; i++) {
+        start += app[i];
+    }
+    this.words = start
+        .replace(/\n/g, ' ')
+        .replace(/ +(?= )/g, '')
+        .split(' ');
 };
 
 WordBank.prototype.hasWords = function() {
