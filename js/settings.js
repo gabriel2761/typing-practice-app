@@ -32,6 +32,18 @@ Settings.prototype.renderListener = function() {
 	self.$settingsExitButton.click(function() {
 		self.$settingsView.addClass('hidden');
 	});
+    $('#min-range-decrement').click(function() {
+        console.log('decrement min');
+    });
+    $('#min-range-increment').click(function() {
+        console.log('increment min');
+    });
+    $('#max-range-decrement').click(function() {
+        console.log('decrement max');
+    });
+    $('#max-range-increment').click(function() {
+        console.log('increment max');
+    });
 };
 
 Settings.prototype.setCustomTextListener = function(customText) {
