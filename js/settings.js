@@ -33,16 +33,24 @@ Settings.prototype.renderListener = function() {
 		self.$settingsView.addClass('hidden');
 	});
     $('#min-range-decrement').click(function() {
-        console.log('decrement min');
+        var $min = $('#min-letters');
+        var value = $min.val();
+        $min.val(--value);
     });
     $('#min-range-increment').click(function() {
-        console.log('increment min');
+        var $min = $('#min-letters');
+        var value = $min.val();
+        $min.val(++value);
     });
     $('#max-range-decrement').click(function() {
-        console.log('decrement max');
+        var $min = $('#max-letters');
+        var value = $min.val();
+        $min.val(--value);
     });
     $('#max-range-increment').click(function() {
-        console.log('increment max');
+        var $min = $('#max-letters');
+        var value = $min.val();
+        $min.val(++value);
     });
 };
 
