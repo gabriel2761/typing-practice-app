@@ -34,23 +34,29 @@ Settings.prototype.renderListener = function() {
 	});
     $('#min-range-decrement').click(function() {
         var $min = $('#min-letters');
-        var value = $min.val();
+        var value = parseInt($min.val());
+        if (value <= 2) return;
         $min.val(--value);
     });
     $('#min-range-increment').click(function() {
         var $min = $('#min-letters');
-        var value = $min.val();
+        var $max = $('#max-letters');
+        var value = parseInt($min.val());
+        if (value >= parseInt($max.val())) return;
         $min.val(++value);
     });
     $('#max-range-decrement').click(function() {
-        var $min = $('#max-letters');
-        var value = $min.val();
-        $min.val(--value);
+        var $max = $('#max-letters');
+        var $min = $('#min-letters');
+        var value = parseInt($max.val());
+        if (value <= parseInt($min.val())) return;
+        $max.val(--value);
     });
     $('#max-range-increment').click(function() {
-        var $min = $('#max-letters');
-        var value = $min.val();
-        $min.val(++value);
+        var $max = $('#max-letters');
+        var value = parseInt($max.val());
+        if (value >= 12) return;
+        $max.val(++value);
     });
 };
 
