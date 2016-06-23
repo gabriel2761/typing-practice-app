@@ -32,31 +32,29 @@ Settings.prototype.renderListener = function() {
 	self.$settingsExitButton.click(function() {
 		self.$settingsView.addClass('hidden');
 	});
+
+    var $minletters = $('#min-letters');
+    var $maxletters = $('#max-letters');
+
     $('#min-range-decrement').click(function() {
-        var $min = $('#min-letters');
-        var value = parseInt($min.val());
+        var value = parseInt($minletters.val());
         if (value <= 2) return;
-        $min.val(--value);
+        $minletters.val(--value);
     });
     $('#min-range-increment').click(function() {
-        var $min = $('#min-letters');
-        var $max = $('#max-letters');
-        var value = parseInt($min.val());
-        if (value >= parseInt($max.val())) return;
-        $min.val(++value);
+        var value = parseInt($minletters.val());
+        if (value >= parseInt($maxletters.val())) return;
+        $minletters.val(++value);
     });
     $('#max-range-decrement').click(function() {
-        var $max = $('#max-letters');
-        var $min = $('#min-letters');
-        var value = parseInt($max.val());
-        if (value <= parseInt($min.val())) return;
-        $max.val(--value);
+        var value = parseInt($maxletters.val());
+        if (value <= parseInt($minletters.val())) return;
+        $maxletters.val(--value);
     });
     $('#max-range-increment').click(function() {
-        var $max = $('#max-letters');
-        var value = parseInt($max.val());
+        var value = parseInt($maxletters.val());
         if (value >= 12) return;
-        $max.val(++value);
+        $maxletters.val(++value);
     });
 };
 
@@ -73,15 +71,15 @@ Settings.prototype.setCustomTextListener = function(customText) {
 
 Settings.prototype.setLetterRange = function(range) {
     var self = this;
-    var minletters = $('#min-letters');
-    var maxletters = $('#max-letters');
+    var $minletters = $('#min-letters');
+    var $maxletters = $('#max-letters');
     self.$settingsExitButton.click(sendRange);
     self.$settingsButton.click(sendRange);
     function sendRange() {
         if (!self.$settingsView.hasClass('hidden')) {
             range({
-                'min': minletters.val(),
-                'max': maxletters.val()
+                'min': $minletters.val(),
+                'max': $maxletters.val()
             });
         }
     }
@@ -94,12 +92,6 @@ Settings.prototype.setLetterRange = function(range) {
         if (this.value.length >= 2) {
             this.value = Math.floor(this.value/10);
         }
-    });
-    $('#min-letters').keyup(function() {
-        console.log('min');
-    });
-    $('#max-letters').keyup(function() {
-        console.log('max');
     });
 };
 
