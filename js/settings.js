@@ -36,25 +36,20 @@ Settings.prototype.renderListener = function() {
     var $minletters = $('#min-letters');
     var $maxletters = $('#max-letters');
 
-    $minletters.keydown(function() {
-
-    });
-
     $minletters.focusout(function() {
         if (this.value < 2) {
             this.value = 2;
-        }
-        if (this.value > parseInt($maxletters.val())) {
+        } else if (this.value > parseInt($maxletters.val())) {
             this.value = parseInt($maxletters.val());
         }
-
     });
 
     $maxletters.focusout(function() {
         if (this.value > 12) {
             this.value = 12;
-        }
-        if (this.value > parseInt($minletters.val())) {
+        } else if (this.value > parseInt($minletters.val())) {
+            this.value = parseInt($minletters.val());
+        } else if (this.value === '') {
             this.value = parseInt($minletters.val());
         }
     });
