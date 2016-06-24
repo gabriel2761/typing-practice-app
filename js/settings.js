@@ -36,6 +36,29 @@ Settings.prototype.renderListener = function() {
     var $minletters = $('#min-letters');
     var $maxletters = $('#max-letters');
 
+    $minletters.keydown(function() {
+
+    });
+
+    $minletters.focusout(function() {
+        if (this.value < 2) {
+            this.value = 2;
+        }
+        if (this.value > parseInt($maxletters.val())) {
+            this.value = parseInt($maxletters.val());
+        }
+
+    });
+
+    $maxletters.focusout(function() {
+        if (this.value > 12) {
+            this.value = 12;
+        }
+        if (this.value > parseInt($minletters.val())) {
+            this.value = parseInt($minletters.val());
+        }
+    });
+
     $('#min-range-decrement').click(function() {
         var value = parseInt($minletters.val());
         if (value <= 2) return;
@@ -83,16 +106,6 @@ Settings.prototype.setLetterRange = function(range) {
             });
         }
     }
-    $('.two-numbers').keyup(function() {
-        this.value = this.value.replace(/[^0-9\.]/g,'');
-        if (this.value >= 13) {
-            this.value = 13;
-        }
-    }).keydown(function() {
-        if (this.value.length >= 2) {
-            this.value = Math.floor(this.value/10);
-        }
-    });
 };
 
 Settings.prototype.isVisible = function() {
