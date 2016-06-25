@@ -1,4 +1,1 @@
-var app = new App();
-
-app.initialize();
-app.render();
+var App = new App();

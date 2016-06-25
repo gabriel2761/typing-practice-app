@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Inconsolata;
-    #focus {
+    #main-focus {
         position: absolute;
         top: 0;
         z-index: -99;
@@ -19,19 +19,9 @@ body {
     .hidden {
         visibility: hidden;
     }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-    }
 }
 
-.typing-info {
-    margin: 0 80px;
-}
-
-.navbar {
+#navbar {
     margin: 0;
     height: 60px;
     width: 100%;
@@ -42,7 +32,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     box-sizing: border-box;
-    #settings-button {
+    #settings-navbar-tab {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -51,31 +41,10 @@ body {
         height: 100%;
         width: 110px;
         font-size: 18px;
-    }
-    #settings-button:hover {
-        background-color: #63818e;
-        color: #fff;
-    }
-}
-
-#letters {
-    white-space: pre;
-    margin: 140px auto;
-    width: 800px;
-    .letter {
-        font-size: 28px;
-    }
-    .letter.mark-normal {
-        color: black;
-    }
-    .letter.mark-correct {
-        color: blue;
-    }
-    .letter.mark-incorrect {
-        color: red;
-    }
-    .letter.underline {
-        border-bottom: 2px solid purple;
+        &:hover {
+            background-color: #63818e;
+            color: #fff;
+        }
     }
 }
 
@@ -90,68 +59,8 @@ body {
     box-sizing: border-box;
     padding: 16px 50px;
     z-index: 100;
-    .settings-header {
-        display: flex;
-        justify-content: space-between;
-        #settings-exit-button {
-            height: 32px;
-            font-size: 30px;
-            margin: 0;
-            font-size: 32px;
-            color: $secondary-text;
-            padding: 12px;
-            cursor: pointer;
-        }
-        #settings-exit-button:hover {
-            color: #000;
-        }
-    }
-    #max-range-container {
-        margin-right: 12px;
-    }
-    .word-range-input-container {
-        display: flex;
-    }
-    .word-range-input {
-        width: 40px;
-        height: 26px;
-        padding: 8px;
-        font-size: 22px;
-    }
-    .range-container {
-        display: flex;
-        padding: 4px;
+}
 
-        .arrow {
-            margin: 0;
-            padding: 8px;
-            font-size: 22px;
-        }
-    }
-    #custom-text-area {
-        margin: 26px 0;
-        width: calc(100% - 24px);
-        height: 300px;
-        padding: 12px;
-        resize: none;
-        font-size: 18px;
-        color: #555;
-        outline: none;
-    }
-    #input-custom-text-button {
-        padding: 12px;
-        border: 3px solid #673AB7;
-        color: #673AB7;
-        font-size: 18px;
-        font-weight: 600;
-        background-color: #fff;
-    }
-    #input-custom-text-button:hover {
-        background-color: #673AB7;
-        color: #fff;
-        cursor: pointer;
-    }
-    #input-text:focus {
-        outline: none;
-    }
+#letters-view {
+    margin-top: 200px;
 }

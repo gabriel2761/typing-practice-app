@@ -3,64 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Typing</title>
+    <title>Typer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inconsolata" />
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <input id="focus" tabindex="0"></input>
-
-    <nav class="navbar">
-        <p id="settings-button">settings</p>
+    <nav id="navbar">
+        <div id="settings-navbar-tab">settings</div>
     </nav>
 
-    <div id="letters"></div>
-
-    <section class="typing-info">
-        <div id="type-count"></div>
-        <p id="mistake-count"></p>
-        <div id="mistake-letters"></div>
-    </section>
-
     <section id="settings-view" class="hidden">
-        <div class="settings-header">
-            <h2 class="settings-title">Settings</h2>
-            <p id="settings-exit-button">x</p>
-        </div>
-        <div class="word-range-input-container">
-            <div id="min-range-container">
-                <p>min letters</p>
-                <div class="range-container">
-                    <p id="min-range-decrement" class="arrow"><</p>
-                    <input id="min-letters" class="word-range-input two-numbers" value="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-                    <p id="min-range-increment" class="arrow">></p>
-                </div>
-            </div>
-            <div id="max-range-container">
-                <p>max letters</p>
-                <div class="range-container">
-                    <p id="max-range-decrement" class="arrow"><</p>
-                    <input id="max-letters" class="word-range-input two-numbers" value="6" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-                    <p id="max-range-increment" class="arrow">></p>
-                </div>
-            </div>
-        </div>
-        <textarea id="custom-text-area" placeholder="Paste text here"></textarea>
-        <button id="input-custom-text-button" type="submit">Use Text</button>
+        <h2>Settings</h2>
+        <div class="letter-range-container">Min Letters: <input id="" placeholder="Default: 3" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></div>
+        <div class="letter-range-container">Max Letters: <input id="" placeholder="Default: 5" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ></div>
     </section>
 
+    <input id="main-focus">
 
-    <script src="js/plugins/jquery-2.2.3.min.js"></script>
-    <script src="js/words/words.js"></script>
-    <script src="js/words/wordbank.js"></script>
-    <script src="js/keymap.js"></script>
-    <script src="js/keys.js"></script>
-    <script src="js/letters.js"></script>
-    <script src="js/letter.js"></script>
-    <script src="js/mistakes.js"></script>
+    <section id="letters-view"></section>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="js/random-words.js"></script>
     <script src="js/settings.js"></script>
+    <script src="js/letter.js"></script>
+    <script src="js/letters-view.js"></script>
     <script src="js/app.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>
