@@ -15,8 +15,10 @@ var Settings = function() {
     }
 
     function updateLetterRanges() {
-        minLetterRange = parseInt($minLetterRangeInput.val());
-        maxLetterRange = parseInt($maxLetterRangeInput.val());
+        var min = parseInt($minLetterRangeInput.val());
+        var max = parseInt($maxLetterRangeInput.val());
+        if (isNaN(min)) minLetterRange = 3;
+        if (isNaN(max)) maxLetterRange = 5;
     }
 
     this.getRange = function() {
