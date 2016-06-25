@@ -41,10 +41,10 @@ var Settings = function() {
     }
 
     function updateLetterRanges() {
-        var min = parseInt($minLetterRangeInput.val());
-        var max = parseInt($maxLetterRangeInput.val());
-        if (isNaN(min)) minLetterRange = 3;
-        if (isNaN(max)) maxLetterRange = 5;
+        minLetterRange = parseInt($minLetterRangeInput.val());
+        maxLetterRange = parseInt($maxLetterRangeInput.val());
+        if (isNaN(minLetterRange)) minLetterRange = 3;
+        if (isNaN(maxLetterRange)) maxLetterRange = 5;
     }
 
     this.getRange = function() {
@@ -59,6 +59,7 @@ var Settings = function() {
         $applySettingsButton.click(function() {
             updateLetterRanges();
             toggleVisiblity();
+            console.log(minLetterRange + ' ' + maxLetterRange);
         });
     };
 
