@@ -59,7 +59,7 @@ var Settings = function() {
         $applySettingsButton.click(function() {
             updateLetterRanges();
             toggleVisiblity();
-            console.log(minLetterRange + ' ' + maxLetterRange);
+            callback();
         });
     };
 

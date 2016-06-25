@@ -3,6 +3,7 @@ var LetterView = function() {
     var letters = [];
 
     this.loadValues = function(values) {
+        $letters.empty();
         values.forEach(function(value) {
             var letter = new Letter(value);
             letters.push(letter);

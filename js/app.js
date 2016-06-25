@@ -5,7 +5,8 @@ var App = function() {
     var settings = new Settings();
     var lettersView = new LetterView();
 
-    function loadWords() {
+    function refreshWords() {
+
         var range = settings.getRange();
         var words = randomWords.getLetters(range);
         lettersView.loadValues(words);
@@ -21,9 +22,7 @@ var App = function() {
         this.value = '';
     });
 
-    settings.adjustRangeListener(function(callback) {
-        console.log(callback);
-    });
+    settings.adjustRangeListener(refreshWords);
 
-    loadWords();
+    refreshWords();
 };
