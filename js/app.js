@@ -21,8 +21,8 @@ var App = function() {
         this.value = '';
     });
 
-    settings.adjustRangeListener(function(range) {
-        console.log(range);
+    settings.adjustRangeListener(function(callback) {
+        console.log(callback);
     });
 
     loadWords();

@@ -29,7 +29,7 @@ var Settings = function() {
         return !$settingsView.hasClass('hidden');
     };
 
-    this.adjustRangeListener = function(range) {
+    this.adjustRangeListener = function(callback) {
         $applySettingsButton.click(function() {
             updateLetterRanges();
             toggleVisiblity();
