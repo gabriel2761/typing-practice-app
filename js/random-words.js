@@ -135,7 +135,11 @@ var RandomWords = function() {
             words += random[i - 2];
         }
 
-        words = words.split(' ');
+        words = words
+            .replace(/\n/g, ' ')
+            .replace(/ +(?= )/g, '')
+            .split(' ');
+
 
         while (length >= range.min) {
             var word = words[Math.floor(Math.random() * words.length)];
@@ -145,6 +149,11 @@ var RandomWords = function() {
             }
         }
 
-        return letters.split('').reverse();
+        letters = letters.split('');
+
+        if (letters[0] == ' ') letters.shift();
+        if (letters[letters.length - 1] == ' ') letters.pop();
+
+        return letters.reverse();
     };
 };
