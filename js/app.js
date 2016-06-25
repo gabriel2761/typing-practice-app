@@ -21,5 +21,9 @@ var App = function() {
         this.value = '';
     });
 
+    settings.adjustRangeListener(function(range) {
+        console.log(range);
+    });
+
     loadWords();
 };

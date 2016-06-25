@@ -1,5 +1,6 @@
 $dark-primary: #455a64;
 $primary-color: #607d8b;
+$accent-color: #00bcd4;
 $primary-text: #121212;
 $secondary-text: #727272;
 
@@ -59,6 +60,11 @@ body {
     box-sizing: border-box;
     padding: 16px 50px;
     z-index: 100;
+    #apply-settings-button {
+        font-size: 26px;
+        color: $accent-color;
+        cursor: pointer;
+    }
 }
 
 #letters-view {
