@@ -10,6 +10,32 @@ var Settings = function() {
 
     $settingsTab.click(toggleVisiblity);
 
+    $minLetterRangeInput.focusout(function() {
+        var min = parseInt($minLetterRangeInput.val());
+        var max = parseInt($maxLetterRangeInput.val());
+        if (min < 2) {
+            this.value = 2;
+        } else if (min > 12) {
+            this.value = 12;
+            $maxLetterRangeInput.val(12);
+        } else if (min > max || isNaN(max) && min > 5) {
+            $maxLetterRangeInput.val(this.value);
+        }
+    });
+
+    $maxLetterRangeInput.focusout(function() {
+        var min = parseInt($minLetterRangeInput.val());
+        var max = parseInt($maxLetterRangeInput.val());
+        if (max > 12) {
+            this.value = 12;
+        } else if(max < 2) {
+            this.value = 2;
+            $minLetterRangeInput.val(2);
+        } else if (max < min || isNaN(min) && max < 3) {
+            $minLetterRangeInput.val(this.value);
+        }
+    });
+
     function toggleVisiblity() {
         $settingsView.toggleClass('hidden');
     }
