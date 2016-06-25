@@ -17,7 +17,6 @@ var LetterView = function() {
 
     this.input = function(value) {
         if (getLastLetter().matches(value)) {
-            console.log('match: ' + value);
         } else {
             console.log('miss: ' + value);
         }

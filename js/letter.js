@@ -8,7 +8,7 @@ var Letter = function(v) {
     }
 
     function highlightCorrect() {
-
+        $element.addClass('highlight');
     }
 
     this.render = function() {
