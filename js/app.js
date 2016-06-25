@@ -6,7 +6,6 @@ var App = function() {
     var lettersView = new LetterView();
 
     function refreshWords() {
-
         var range = settings.getRange();
         var words = randomWords.getLetters(range);
         lettersView.loadValues(words);

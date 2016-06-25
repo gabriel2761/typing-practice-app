@@ -2,6 +2,10 @@ var LetterView = function() {
     var $letters = $('#letters-view');
     var letters = [];
 
+    function getLastLetter() {
+        return letters[letters.length - 1];
+    }
+
     this.loadValues = function(values) {
         $letters.empty();
         values.forEach(function(value) {
@@ -12,7 +16,12 @@ var LetterView = function() {
     };
 
     this.input = function(value) {
-        console.log(value);
+        if (getLastLetter().matches(value)) {
+            console.log('match: ' + value);
+        } else {
+            console.log('miss: ' + value);
+        }
+        letters.pop();
     };
 
 };
