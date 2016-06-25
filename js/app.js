@@ -11,10 +11,14 @@ var App = function() {
         lettersView.loadValues(words);
     }
 
-    $doc.click(function(event) {
+    function focusOnLetter() {
         if (settings.isVisible()) return;
         $mainFocus.focus();
-    });
+    }
+
+    $doc.click(focusOnLetter)
+        .keydown(focusOnLetter);
+
 
     $mainFocus.on('input', function() {
         lettersView.input(this.value);
