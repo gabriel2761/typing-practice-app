@@ -11,6 +11,10 @@ var Letter = function(v) {
         $element.addClass('highlight');
     }
 
+    function markIncorrect() {
+        $element.addClass('incorrect');
+    }
+
     this.render = function() {
         $letters.prepend($element);
     };
@@ -25,6 +29,7 @@ var Letter = function(v) {
             return true;
         } else {
             changeValue(v);
+            markIncorrect();
             return false;
         }
     };
