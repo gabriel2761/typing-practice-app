@@ -1,6 +1,6 @@
 var Letter = function(v) {
     var value = v;
-    var $element = $('<span class="letter">'+value+'</span>');
+    var $element = $('<div class="letter">'+value+'</div>');
     var $letters = $('#letters-view');
 
     function changeValue(value) {
