@@ -14,12 +14,15 @@ var LetterView = function() {
     }
 
     this.moveCursorPrev = function() {
-        if (cursorIndex === 0) return;
         currentLetter().removeUnderline();
         cursorIndex--;
         currentLetter().revertInitalValue();
         currentLetter().removeHighlight();
         currentLetter().underline();
+    };
+
+    this.cursorAtStart = function() {
+        return cursorIndex === 0;
     };
 
     this.loadValues = function(values) {

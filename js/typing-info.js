@@ -10,6 +10,6 @@ var TypingInfo = function() {
     };
 
     this.decrementTypeCount = function() {
-        $lettersTypedView.val('Letters Typed ' + (--lettersTyped));
+        $lettersTypedView.text('Letters Typed ' + (--lettersTyped));
     };
 };

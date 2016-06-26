@@ -24,8 +24,10 @@ var App = function() {
 
 
     $mainFocus.keydown(function(event) {
-        if (event.keyCode === KEYCODE_BACKSPACE) {
+        if (event.keyCode === KEYCODE_BACKSPACE &&
+            !lettersView.cursorAtStart()) {
             lettersView.moveCursorPrev();
+            typingInfo.decrementTypeCount();
         }
     });
 
