@@ -82,6 +82,7 @@ body {
     width: 80%;
     font-size: 26px;
     display: flex;
+    flex-wrap: wrap;
     .highlightCorrect {
         color: blue;
     }
