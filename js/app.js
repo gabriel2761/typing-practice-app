@@ -5,6 +5,8 @@ var App = function() {
     var settings = new Settings();
     var lettersView = new LetterView();
 
+    var KEYCODE_BACKSPACE = 8;
+
     function refreshWords() {
         var range = settings.getRange();
         var words = randomWords.getLetters(range);
@@ -19,6 +21,12 @@ var App = function() {
     $doc.click(focusOnLetter)
         .keydown(focusOnLetter);
 
+
+    $mainFocus.keydown(function(event) {
+        if (event.keyCode === KEYCODE_BACKSPACE) {
+            lettersView.moveCursorPrev();
+        }
+    });
 
     $mainFocus.on('input', function() {
         lettersView.input(this.value, function(callback) {

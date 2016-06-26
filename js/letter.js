@@ -8,11 +8,11 @@ var Letter = function(v) {
     }
 
     function highlightCorrect() {
-        $element.addClass('highlight');
+        $element.addClass('highlightCorrect');
     }
 
-    function markIncorrect() {
-        $element.addClass('incorrect');
+    function highlightIncorrect() {
+        $element.addClass('highlightIncorrect');
     }
 
     this.underline = function() {
@@ -21,6 +21,11 @@ var Letter = function(v) {
 
     this.removeUnderline = function() {
         $element.removeClass('underline');
+    };
+
+    this.removeHighlight = function() {
+        $element.removeClass('highlightIncorrect');
+        $element.removeClass('highlightCorrect');
     };
 
     this.render = function() {
@@ -37,7 +42,7 @@ var Letter = function(v) {
             return true;
         } else {
             changeValue(v);
-            markIncorrect();
+            highlightIncorrect();
             return false;
         }
     };

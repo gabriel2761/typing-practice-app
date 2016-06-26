@@ -13,6 +13,14 @@ var LetterView = function() {
         currentLetter().underline();
     }
 
+    this.moveCursorPrev = function() {
+        if (cursorIndex === 0) return;
+        currentLetter().removeUnderline();
+        cursorIndex--;
+        currentLetter().removeHighlight();
+        currentLetter().underline();
+    };
+
     this.loadValues = function(values) {
         $letters.empty();
         values.forEach(function(value) {
@@ -36,5 +44,6 @@ var LetterView = function() {
             moveCursorNext();
         }
     };
+
 
 };
