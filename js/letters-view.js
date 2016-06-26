@@ -1,13 +1,16 @@
 var LetterView = function() {
     var $letters = $('#letters-view');
     var letters = [];
+    var cursorIndex = 0;
 
-    function getLastLetter() {
-        return letters[letters.length - 1];
+    function currentLetter() {
+        return letters[cursorIndex];
     }
 
-    function underlineLast() {
-        getLastLetter().addClass('underline');
+    function moveCursorNext() {
+        currentLetter().removeUnderline();
+        cursorIndex++;
+        currentLetter().underline();
     }
 
     this.loadValues = function(values) {
@@ -17,20 +20,21 @@ var LetterView = function() {
             letters.push(letter);
             letter.render();
         });
+        currentLetter().underline();
     };
 
     this.input = function(value, callback) {
-        if (getLastLetter().matches(value)) {
+        if (currentLetter().matches(value)) {
             callback('match');
         } else {
             callback('mistake');
         }
 
-        if (letters.length <= 1) {
+        if (cursorIndex === letters.length - 1) {
             callback('refresh');
+        } else {
+            moveCursorNext();
         }
-
-        letters.pop();
     };
 
 };

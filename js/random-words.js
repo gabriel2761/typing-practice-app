@@ -154,6 +154,6 @@ var RandomWords = function() {
         if (letters[0] == ' ') letters.shift();
         if (letters[letters.length - 1] == ' ') letters.pop();
 
-        return letters.reverse();
+        return letters;
     };
 };

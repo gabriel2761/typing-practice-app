@@ -15,8 +15,16 @@ var Letter = function(v) {
         $element.addClass('incorrect');
     }
 
+    this.underline = function() {
+        $element.addClass('underline');
+    };
+
+    this.removeUnderline = function() {
+        $element.removeClass('underline');
+    };
+
     this.render = function() {
-        $letters.prepend($element);
+        $letters.append($element);
     };
 
     this.revertInitalValue = function() {

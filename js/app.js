@@ -24,7 +24,6 @@ var App = function() {
         lettersView.input(this.value, function(callback) {
             switch (callback) {
                 case 'refresh':
-                    console.log('refreshed');
                     refreshWords();
                     break;
                 case 'mistake':
