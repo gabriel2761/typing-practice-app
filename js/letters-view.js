@@ -17,6 +17,7 @@ var LetterView = function() {
         if (cursorIndex === 0) return;
         currentLetter().removeUnderline();
         cursorIndex--;
+        currentLetter().revertInitalValue();
         currentLetter().removeHighlight();
         currentLetter().underline();
     };
