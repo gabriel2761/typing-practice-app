@@ -68,8 +68,17 @@ body {
     }
 }
 
+#typing-info {
+    margin: 0 auto;
+    width: 80%;
+    text-align: right;
+    .info-heading {
+        margin: 0;
+    }
+}
+
 #letters-view {
-    margin: 140px auto;
+    margin: 0 auto;
     width: 80%;
     font-size: 26px;
     display: flex;
