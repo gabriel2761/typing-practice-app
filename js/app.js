@@ -5,6 +5,7 @@ var App = function() {
     var settings = new Settings();
     var lettersView = new LetterView();
     var typingInfo = new TypingInfo();
+    var mistakesView = new MistakesView();
 
     var KEYCODE_BACKSPACE = 8;
 
@@ -39,6 +40,7 @@ var App = function() {
                     break;
                 case 'mistake':
                     typingInfo.incrementTypeCount();
+                    mistakesView.addMistake(null);
                     break;
                 case 'match':
                     typingInfo.incrementTypeCount();
