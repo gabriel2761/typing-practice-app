@@ -21,11 +21,25 @@ var App = function() {
 
 
     $mainFocus.on('input', function() {
-        lettersView.input(this.value);
+        lettersView.input(this.value, function(callback) {
+            switch (callback) {
+                case 'refresh':
+                    console.log('refreshed');
+                    refreshWords();
+                    break;
+                case 'mistake':
+                    console.log('mistake');
+                    break;
+                case 'match':
+                    console.log('match');
+                    break;
+                default:
+                    break;
+            }
+        });
         this.value = '';
     });
 
     settings.adjustRangeListener(refreshWords);
-
     refreshWords();
 };

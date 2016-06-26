@@ -6,6 +6,10 @@ var LetterView = function() {
         return letters[letters.length - 1];
     }
 
+    function underlineLast() {
+        getLastLetter().addClass('underline');
+    }
+
     this.loadValues = function(values) {
         $letters.empty();
         values.forEach(function(value) {
@@ -15,11 +19,17 @@ var LetterView = function() {
         });
     };
 
-    this.input = function(value) {
+    this.input = function(value, callback) {
         if (getLastLetter().matches(value)) {
+            callback('match');
         } else {
-            console.log('miss: ' + value);
+            callback('mistake');
         }
+
+        if (letters.length <= 1) {
+            callback('refresh');
+        }
+
         letters.pop();
     };
 
