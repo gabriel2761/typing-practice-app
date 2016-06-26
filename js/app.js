@@ -4,6 +4,7 @@ var App = function() {
     var randomWords = new RandomWords();
     var settings = new Settings();
     var lettersView = new LetterView();
+    var typingInfo = new TypingInfo();
 
     var KEYCODE_BACKSPACE = 8;
 
@@ -35,10 +36,10 @@ var App = function() {
                     refreshWords();
                     break;
                 case 'mistake':
-                    console.log('mistake');
+                    typingInfo.incrementTypeCount();
                     break;
                 case 'match':
-                    console.log('match');
+                    typingInfo.incrementTypeCount();
                     break;
                 default:
                     break;
