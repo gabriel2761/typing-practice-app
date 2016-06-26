@@ -37,6 +37,10 @@ var LetterView = function() {
         currentLetter().underline();
     };
 
+    this.getCurrentLetterValue = function() {
+        return currentLetter().getValue();
+    };
+
     this.input = function(value, callback) {
         if (currentLetter().matches(value)) {
             callback('match');

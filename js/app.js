@@ -20,6 +20,14 @@ var App = function() {
         $mainFocus.focus();
     }
 
+    function addMistake(value) {
+        typingInfo.incrementTypeCount();
+        mistakesView.addMistake({
+            'letter': lettersView.getCurrentLetterValue(),
+            'mistake': value
+        });
+    }
+
     $doc.click(focusOnLetter)
         .keydown(focusOnLetter);
 
@@ -33,14 +41,14 @@ var App = function() {
     });
 
     $mainFocus.on('input', function() {
-        lettersView.input(this.value, function(callback) {
+        var value = this.value;
+        lettersView.input(value, function(callback) {
             switch (callback) {
                 case 'refresh':
                     refreshWords();
                     break;
                 case 'mistake':
-                    typingInfo.incrementTypeCount();
-                    mistakesView.addMistake(null);
+                    addMistake(value);
                     break;
                 case 'match':
                     typingInfo.incrementTypeCount();

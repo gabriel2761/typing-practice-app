@@ -36,6 +36,10 @@ var Letter = function(v) {
         $element.empty().append(value);
     };
 
+    this.getValue = function() {
+        return value;
+    };
+
     this.matches = function(v) {
         if (value === v) {
             highlightCorrect();

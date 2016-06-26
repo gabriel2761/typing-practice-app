@@ -4,10 +4,12 @@ var MistakesView = function() {
     var mistakes = [];
 
     function incrementMistakeCount() {
-        $mistakesCount.text('Mistakes: ' + (++mistakeCount));
+        $mistakesCount.text('Mistakes: ' + mistakes.length);
     }
 
     this.addMistake = function(mistake) {
+        mistakes.push(mistake);
         incrementMistakeCount();
-    }
+        console.log(mistake);
+    };
 };
