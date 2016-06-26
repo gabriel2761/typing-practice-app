@@ -23,12 +23,14 @@ var LetterView = function() {
     };
 
     this.loadValues = function(values) {
+        letters = [];
         $letters.empty();
         values.forEach(function(value) {
             var letter = new Letter(value);
             letters.push(letter);
             letter.render();
         });
+        cursorIndex = 0;
         currentLetter().underline();
     };
 
