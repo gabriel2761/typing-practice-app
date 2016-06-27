@@ -3,16 +3,16 @@ var TypingInfo = function() {
     var $wpmView = $('#wpm-view');
     var lettersTyped = 0;
     var tempLettersTyped = 0;
-    var timeElapsed = 0;
+    var secondsElapsed = 0;
     var afkTimeout = null;
     var wpsIntervalUpdate = null;
 
     function setAfkTimeout() {
         afkTimeout = setTimeout(function() {
-            timeElapsed = 0;
+            secondsElapsed = 0;
             tempLettersTyped = 0;
             stopWpsIntervalUpdate();
-            console.log('timer out cleared');
+            $wpmView.text('WPM: ' + 0);
         }, 7000);
     }
 
@@ -20,9 +20,8 @@ var TypingInfo = function() {
         if (wpsIntervalUpdate !== null) return;
         wpsIntervalUpdate = setInterval(function() {
             var words = tempLettersTyped / 5;
-            var wps = words / (++timeElapsed);
+            var wps = words / (++secondsElapsed);
             $wpmView.text('WPM: ' + Math.round(wps * 60));
-            console.log(tempLettersTyped + ' ' + timeElapsed);
         }, 1000);
     }
 
@@ -31,14 +30,14 @@ var TypingInfo = function() {
         wpsIntervalUpdate = null;
     }
 
-    function clearAfkTimeout() {
+    function stopAfkTimeout() {
         clearTimeout(afkTimeout);
     }
 
     this.incrementTypeCount = function() {
         $lettersTypedView.text('Letters Typed ' + (++lettersTyped));
         tempLettersTyped++;
-        clearAfkTimeout();
+        stopAfkTimeout();
         setAfkTimeout();
         setWpsIntervalUpdate();
     };
