@@ -21,10 +21,15 @@ var App = function() {
     }
 
     function addMistake(value) {
+        var letter = lettersView.getCurrentLetterValue();
+
+        if (value === ' ') value = 'space';
+        if (letter === ' ') letter = 'space';
+
         typingInfo.incrementTypeCount();
         mistakesView.addMistake({
             'mistake': value,
-            'letter': lettersView.getCurrentLetterValue()
+            'letter': letter
         });
     }
 
