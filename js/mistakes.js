@@ -18,10 +18,6 @@ var MistakesView = function() {
 
     }
 
-    function incrementMistakeCount() {
-        $mistakesCount.text('Mistakes: ' + mistakes.length);
-    }
-
     function updateMistakes(mistakeInfo) {
         for (var i = 0; i < mistakes.length; i++) {
             if (mistakes[i].matches(mistakeInfo)) {
@@ -32,8 +28,22 @@ var MistakesView = function() {
         mistakes.push(new Mistake(mistakeInfo));
     }
 
+    function updateMistakeView() {
+        $mistakesLetterView.empty();
+        mistakes.forEach(function(mistake) {
+            var view = $('<div>'+mistake.letter+
+                ' -> '+ mistake.mistake +'  count: '+mistake.count +'</div>');
+            $mistakesLetterView.append(view);
+        });
+    }
+
+    function incrementMistakeCount() {
+        $mistakesCount.text('Mistakes: ' + mistakes.length);
+    }
+
     this.addMistake = function(mistakeInfo) {
         updateMistakes(mistakeInfo);
+        updateMistakeView();
         incrementMistakeCount();
     };
 };
