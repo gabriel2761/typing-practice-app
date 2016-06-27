@@ -1,8 +1,8 @@
 var MistakesView = function() {
     var $mistakesCount = $('#mistakes-count');
     var $mistakesLetterView = $('#mistakes-letter-view');
-    var mistakes = [];
     var totalMistakeCount = 0;
+    var mistakes = [];
 
     var Mistake = function(mistakeInfo) {
         this.mistake = mistakeInfo.mistake;
@@ -15,8 +15,8 @@ var MistakesView = function() {
         };
     };
 
-    function sortMistakes() {
-
+    function sortMistakes(a, b) {
+        return b.count - a.count;
     }
 
     function updateMistakes(mistakeInfo) {
@@ -44,7 +44,8 @@ var MistakesView = function() {
 
     this.addMistake = function(mistakeInfo) {
         updateMistakes(mistakeInfo);
-        updateMistakeView();
         incrementMistakeCount();
+        mistakes.sort(sortMistakes);
+        updateMistakeView();
     };
 };
