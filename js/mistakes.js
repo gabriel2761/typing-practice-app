@@ -2,6 +2,7 @@ var MistakesView = function() {
     var $mistakesCount = $('#mistakes-count');
     var $mistakesLetterView = $('#mistakes-letter-view');
     var mistakes = [];
+    var totalMistakeCount = 0;
 
     var Mistake = function(mistakeInfo) {
         this.mistake = mistakeInfo.mistake;
@@ -38,7 +39,7 @@ var MistakesView = function() {
     }
 
     function incrementMistakeCount() {
-        $mistakesCount.text('Mistakes: ' + mistakes.length);
+        $mistakesCount.text('Mistakes: ' + (++totalMistakeCount));
     }
 
     this.addMistake = function(mistakeInfo) {
