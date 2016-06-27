@@ -56,7 +56,7 @@ var App = function() {
                     addMistake(value);
                     break;
                 case 'match':
-                    typingInfo.incrementTypeCount();
+                    typingInfo.incrementTypeCount(refreshWords);
                     break;
                 default:
                     break;

@@ -6,13 +6,15 @@ var TypingInfo = function() {
     var secondsElapsed = 0;
     var afkTimeout = null;
     var wpsIntervalUpdate = null;
+    var self = this;
 
-    function setAfkTimeout() {
+    function setAfkTimeout(refreshWords) {
         afkTimeout = setTimeout(function() {
             secondsElapsed = 0;
             tempLettersTyped = 0;
             stopWpsIntervalUpdate();
             $wpmView.text('WPM: ' + 0);
+            refreshWords();
         }, 7000);
     }
 
@@ -34,11 +36,11 @@ var TypingInfo = function() {
         clearTimeout(afkTimeout);
     }
 
-    this.incrementTypeCount = function() {
+    this.incrementTypeCount = function(refreshWords) {
         $lettersTypedView.text('Letters Typed ' + (++lettersTyped));
         tempLettersTyped++;
         stopAfkTimeout();
-        setAfkTimeout();
+        setAfkTimeout(refreshWords);
         setWpsIntervalUpdate();
     };
 
