@@ -23,8 +23,8 @@ var App = function() {
     function addMistake(value) {
         typingInfo.incrementTypeCount();
         mistakesView.addMistake({
-            'letter': lettersView.getCurrentLetterValue(),
-            'mistake': value
+            'mistake': value,
+            'letter': lettersView.getCurrentLetterValue()
         });
     }
 
