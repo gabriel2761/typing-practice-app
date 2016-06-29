@@ -21,6 +21,13 @@ body {
     .hidden {
         visibility: hidden;
     }
+
+    .main-container {
+        margin: 0 auto;
+        padding: 0;
+        max-width: 900px;
+        min-width: 450px;
+    }
 }
 
 #navbar {

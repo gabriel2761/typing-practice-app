@@ -13,26 +13,28 @@
         <div id="settings-navbar-tab">settings</div>
     </nav>
 
-    <section class="typing-info">
-        <h2 id="letters-typed-view" class="info-heading">Letters Typed: 0</h2>
-        <h2 id="wpm-view" class="info-heading">WPM: 0</h2>
-    </section>
+    <main class="main-container">
+        <section class="typing-info">
+            <h2 id="letters-typed-view" class="info-heading">Letters Typed: 0</h2>
+            <h2 id="wpm-view" class="info-heading">WPM: 0</h2>
+        </section>
 
-    <section id="letters-view"></section>
+        <section id="letters-view"></section>
 
-    <section class="typing-mistakes-container">
-        <h2 id="mistakes-count">Mistakes: 0</h2>
-        <div id="mistakes-letter-view"></div>
-    </section>
+        <section class="typing-mistakes-container">
+            <h2 id="mistakes-count">Mistakes: 0</h2>
+            <div id="mistakes-letter-view"></div>
+        </section>
 
-    <section id="settings-view" class="hidden">
-        <h2>Settings</h2>
-        <div class="letter-range-container">Min Letters: <input id="minletter-range-input" placeholder="Default: 3" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></div>
-        <div class="letter-range-container">Max Letters: <input id="maxletter-range-input" placeholder="Default: 5" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ></div>
-        <p id="apply-settings-button">Apply</p>
-    </section>
+        <section id="settings-view" class="hidden">
+            <h2>Settings</h2>
+            <div class="letter-range-container">Min Letters: <input id="minletter-range-input" placeholder="Default: 3" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></div>
+            <div class="letter-range-container">Max Letters: <input id="maxletter-range-input" placeholder="Default: 5" onkeypress="return event.charCode >= 48 && event.charCode <= 57" ></div>
+            <p id="apply-settings-button">Apply</p>
+        </section>
 
-    <input id="main-focus">
+        <input id="main-focus">
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
     <script src="js/typing-info.js"></script>
