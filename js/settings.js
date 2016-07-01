@@ -4,11 +4,16 @@ var Settings = function() {
     var $applySettingsButton = $('#apply-settings-button');
     var $minLetterRangeInput = $('#minletter-range-input');
     var $maxLetterRangeInput = $('#maxletter-range-input');
+    var $customWordsCheckbox = $('.custom-words-checkbox');
 
     var minLetterRange = 3;
     var maxLetterRange = 5;
 
     $settingsTab.click(toggleVisiblity);
+
+    $customWordsCheckbox.click(function() {
+        console.log('this works');
+    });
 
     $minLetterRangeInput.focusout(function() {
         var min = parseInt($minLetterRangeInput.val());

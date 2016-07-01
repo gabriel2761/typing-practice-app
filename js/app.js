@@ -1,3 +1,7 @@
+$(function() {
+    var app = new App();
+});
+
 var App = function() {
     var $doc = $(document);
     var $mainFocus = $('#main-focus');
