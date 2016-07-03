@@ -77,8 +77,12 @@ body {
         margin: 0;
     }
     #custom-text-area {
+        box-sizing: border-box;
         width: 100%;
+        padding: 12px;
         height: 180px;
+        font-size: 22px;
+        color: #666;
         display: block;
         resize: none;
         flex-align: left;
