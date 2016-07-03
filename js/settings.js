@@ -4,7 +4,7 @@ var Settings = function() {
     var $applySettingsButton = $('#apply-settings-button');
     var $minLetterRangeInput = $('#minletter-range-input');
     var $maxLetterRangeInput = $('#maxletter-range-input');
-    var $customWordsCheckbox = $('.custom-words-checkbox');
+    var $customWordsCheckbox = $('#custom-words-checkbox');
 
     var minLetterRange = 3;
     var maxLetterRange = 5;
@@ -12,7 +12,7 @@ var Settings = function() {
     $settingsTab.click(toggleVisiblity);
 
     $customWordsCheckbox.click(function() {
-        console.log('this works');
+        $customWordsCheckbox.toggleClass('highlight');
     });
 
     $minLetterRangeInput.focusout(function() {
