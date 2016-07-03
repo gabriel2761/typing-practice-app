@@ -22,7 +22,9 @@ var Settings = function() {
     }
 
     function checkCustomText() {
-
+        if ($customTextCheckbox.hasClass('highlight')) {
+            console.log($customTextArea.val());
+        }
     }
 
     $settingsTab.click(toggleVisiblity);
