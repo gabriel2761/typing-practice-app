@@ -78,6 +78,9 @@ body {
             width: 20px;
             height: 20px;
             border: 1px solid #000;
+            &:hover {
+                cursor: pointer;
+            }
             &.highlight {
                 background-color: #000;
             }
