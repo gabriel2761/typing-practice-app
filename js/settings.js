@@ -6,6 +6,7 @@ var Settings = function() {
     var $maxLetterRangeInput = $('#maxletter-range-input');
     var $customTextCheckbox = $('#custom-text-checkbox');
     var $customTextArea = $('#custom-text-area');
+    var $settingExitButton = $('#settings-exit-button');
 
     var minLetterRange = 3;
     var maxLetterRange = 5;
@@ -27,6 +28,7 @@ var Settings = function() {
         }
     }
 
+    $settingExitButton.click(toggleVisiblity);
     $settingsTab.click(toggleVisiblity);
 
     $customTextCheckbox.click(function() {

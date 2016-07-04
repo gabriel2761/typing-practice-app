@@ -70,8 +70,22 @@ body {
     box-sizing: border-box;
     padding: 16px 50px;
     z-index: 100;
-    .settings-header {
-        margin: 0;
+    .settings-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .settings-header-title {
+            margin: 0;
+        }
+        #settings-exit-button {
+            margin: 0;
+            padding: 6px 12px;
+            font-size: 28px;
+            &:hover {
+                background-color: #eee;
+                cursor: pointer;
+            }
+        }
     }
     .custom-text-heading {
         margin: 0;
