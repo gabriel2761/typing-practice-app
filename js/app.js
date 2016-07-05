@@ -15,7 +15,7 @@ var App = function() {
     var KEYCODE_BACKSPACE = 8;
 
     function refreshWords() {
-        if (settings.isUsingCustomText()) {
+        if (settings.isUsingCustomText() && !customWords.empty()) {
             lettersView.loadValues(customWords.getNextWords());
         } else {
             var range = settings.getRange();
