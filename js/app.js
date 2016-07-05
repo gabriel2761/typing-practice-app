@@ -35,7 +35,7 @@ var App = function() {
         if (value === ' ') value = 'space';
         if (letter === ' ') letter = 'space';
 
-        typingInfo.incrementTypeCount();
+        typingInfo.incrementTypeCount(refreshWords);
         mistakesView.addMistake({
             'mistake': value,
             'letter': letter
