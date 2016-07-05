@@ -5,7 +5,6 @@ var Settings = function() {
     var $minLetterRangeInput = $('#minletter-range-input');
     var $maxLetterRangeInput = $('#maxletter-range-input');
     var $customTextCheckbox = $('#custom-text-checkbox');
-    var $customTextArea = $('#custom-text-area');
     var $settingExitButton = $('#settings-exit-button');
 
     var minLetterRange = 3;
@@ -20,12 +19,6 @@ var Settings = function() {
         maxLetterRange = parseInt($maxLetterRangeInput.val());
         if (isNaN(minLetterRange)) minLetterRange = 3;
         if (isNaN(maxLetterRange)) maxLetterRange = 5;
-    }
-
-    function checkCustomText() {
-        if ($customTextCheckbox.hasClass('highlight')) {
-            console.log($customTextArea.val());
-        }
     }
 
     $settingExitButton.click(toggleVisiblity);
@@ -69,11 +62,14 @@ var Settings = function() {
         return !$settingsView.hasClass('hidden');
     };
 
-    this.adjustRangeListener = function(callback) {
+    this.isUsingCustomText = function() {
+        return $customTextCheckbox.hasClass('highlight');
+    };
+
+    this.applySettingsListener = function(callback) {
         $applySettingsButton.click(function() {
             updateLetterRanges();
             toggleVisiblity();
-            checkCustomText();
             callback();
         });
     };

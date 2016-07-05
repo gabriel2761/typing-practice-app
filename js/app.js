@@ -6,6 +6,7 @@ var App = function() {
     var $doc = $(document);
     var $mainFocus = $('#main-focus');
     var randomWords = new RandomWords();
+    var customWords = new CustomWords();
     var settings = new Settings();
     var lettersView = new LetterView();
     var typingInfo = new TypingInfo();
@@ -14,9 +15,13 @@ var App = function() {
     var KEYCODE_BACKSPACE = 8;
 
     function refreshWords() {
-        var range = settings.getRange();
-        var words = randomWords.getLetters(range);
-        lettersView.loadValues(words);
+        if (settings.isUsingCustomText()) {
+            lettersView.loadValues(customWords.getNextWords());
+        } else {
+            var range = settings.getRange();
+            var words = randomWords.getLetters(range);
+            lettersView.loadValues(words);
+        }
     }
 
     function focusOnLetter() {
@@ -44,6 +49,7 @@ var App = function() {
     $mainFocus.keydown(function(event) {
         if (event.keyCode === KEYCODE_BACKSPACE &&
             !lettersView.cursorAtStart()) {
+
             lettersView.moveCursorPrev();
             typingInfo.decrementTypeCount();
         }
@@ -69,6 +75,6 @@ var App = function() {
         this.value = '';
     });
 
-    settings.adjustRangeListener(refreshWords);
+    settings.applySettingsListener(refreshWords);
     refreshWords();
 };
