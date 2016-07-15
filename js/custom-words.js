@@ -1,6 +1,7 @@
 var CustomWords = function() {
     var $customTextArea = $('#custom-text-area');
     var $customTextCheckBox = $('#custom-text-checkbox');
+    var lettersLength = 54;
 
     this.empty = function() {
         return !$customTextArea.val();
@@ -9,9 +10,9 @@ var CustomWords = function() {
     this.getNextWords = function() {
         var letters = $customTextArea.val();
 
-        if (letters.length >= 38) {
-            letters = letters.slice(0, 38);
-            var value = $customTextArea.val().slice(38);
+        if (letters.length >= lettersLength) {
+            letters = letters.slice(0, lettersLength);
+            var value = $customTextArea.val().slice(lettersLength);
             $customTextArea.val(value);
         } else {
             $customTextCheckBox.removeClass('highlight');
