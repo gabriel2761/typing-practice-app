@@ -152,7 +152,28 @@ body {
     }
 }
 
-.typing-mistakes-container {
+.typing-mistakes-section {
     margin: 0 auto;
     width: 80%;
+    .mistakes-headers {
+        width: 180px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .letter-column {
+        width: 50px;
+        text-align: center;
+    }
+    .letter-info {
+        margin: 0;
+        font-size: 22px;
+        width: 50px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .mistake-view {
+        width: 180px;
+        display: flex;
+        justify-content: space-between;
+    }
 }

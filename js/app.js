@@ -32,8 +32,8 @@ var App = function() {
     function addMistake(value) {
         var letter = lettersView.getCurrentLetterValue();
 
-        if (value === ' ') value = 'space';
-        if (letter === ' ') letter = 'space';
+        if (value === ' ') value = "_";
+        if (letter === ' ') letter = "_";
 
         typingInfo.incrementTypeCount(refreshWords);
         mistakesView.addMistake({

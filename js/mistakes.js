@@ -1,6 +1,6 @@
 var MistakesView = function() {
     var $mistakesCount = $('#mistakes-count');
-    var $mistakesLetterView = $('#mistakes-letter-view');
+    var $mistakesLetterView = $('#mistakes-container');
     var totalMistakeCount = 0;
     var mistakes = [];
 
@@ -32,8 +32,13 @@ var MistakesView = function() {
     function updateMistakeView() {
         $mistakesLetterView.empty();
         mistakes.forEach(function(mistake) {
-            var view = $('<div>'+mistake.letter+
-                ' -> '+ mistake.mistake +'  count: '+mistake.count +'</div>');
+            var letter = '<p class="letter-column letter-info">' + mistake.letter + '</p>';
+            var typed = '<p class="letter-column letter-info">' + mistake.mistake + '</p>';
+            var count = '<p class="letter-info">' + mistake.count + '</p>';
+
+            var view = $('<div class="mistake-view">' + letter + typed + count +
+                '</div>');
+
             $mistakesLetterView.append(view);
         });
     }
