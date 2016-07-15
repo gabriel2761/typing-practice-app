@@ -1,0 +1,146 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inconsolata; }
+  html #main-focus,
+  body #main-focus {
+    position: fixed;
+    top: 0;
+    z-index: -99; }
+  html .underline-red,
+  body .underline-red {
+    border-bottom: 1px solid red; }
+  html .hidden,
+  body .hidden {
+    visibility: hidden; }
+  html .main-container,
+  body .main-container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 900px;
+    min-width: 450px; }
+
+#navbar {
+  margin: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #455A64;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box; }
+  #navbar #settings-navbar-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    height: 100%;
+    width: 110px;
+    font-size: 18px; }
+    #navbar #settings-navbar-tab:hover {
+      background-color: #63818e;
+      color: #fff; }
+
+#settings-view {
+  position: fixed;
+  margin: 0 auto;
+  top: 100px;
+  right: 0;
+  left: 0;
+  width: 80%;
+  height: 650px;
+  box-shadow: 0 4px 18px #555;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 16px 50px;
+  z-index: 100; }
+  #settings-view .settings-header-container {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    #settings-view .settings-header-container #settings-exit-button {
+      margin: 0;
+      padding: 6px 12px;
+      font-size: 28px; }
+      #settings-view .settings-header-container #settings-exit-button:hover {
+        color: #00bcd4;
+        cursor: pointer; }
+  #settings-view .range-input {
+    margin-bottom: 22px;
+    padding: 4px;
+    font-size: 14px; }
+  #settings-view #custom-text-area {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    height: 250px;
+    font-size: 22px;
+    color: #666;
+    display: block;
+    resize: none;
+    flex-align: left; }
+  #settings-view .checkbox-container {
+    display: flex;
+    align-items: center; }
+    #settings-view .checkbox-container #custom-text-checkbox {
+      display: inline-block;
+      margin-right: 14px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #000; }
+      #settings-view .checkbox-container #custom-text-checkbox:hover {
+        cursor: pointer; }
+      #settings-view .checkbox-container #custom-text-checkbox.highlight {
+        background-color: #000; }
+  #settings-view #apply-settings-button {
+    font-size: 26px;
+    color: #00bcd4;
+    cursor: pointer; }
+
+.typing-info {
+  margin: 100px auto 0;
+  width: 80%;
+  text-align: right; }
+
+#letters-view {
+  white-space: pre;
+  margin: 15vh auto;
+  width: 80%;
+  font-size: 32px;
+  display: flex;
+  flex-wrap: wrap; }
+  #letters-view .letter {
+    border-bottom: 2px solid #fff; }
+  #letters-view .highlightCorrect {
+    color: blue; }
+  #letters-view .highlightIncorrect {
+    color: red;
+    border-bottom: 2px solid red; }
+  #letters-view .underline {
+    border-bottom: 2px solid purple; }
+
+.typing-mistakes-section {
+  margin: 0 auto;
+  width: 80%; }
+  .typing-mistakes-section .mistakes-headers {
+    width: 180px;
+    display: flex;
+    justify-content: space-between; }
+  .typing-mistakes-section .letter-column {
+    width: 50px;
+    text-align: center; }
+  .typing-mistakes-section .letter-info {
+    margin: 0;
+    font-size: 22px;
+    width: 50px;
+    box-sizing: border-box;
+    text-align: center; }
+  .typing-mistakes-section .mistake-view {
+    width: 180px;
+    display: flex;
+    justify-content: space-between; }

@@ -1,0 +1,27 @@
+{
+  "name": "typer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriel2761/typing-practice-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabriel2761/typing-practice-app/issues"
+  },
+  "homepage": "https://github.com/gabriel2761/typing-practice-app#readme",
+  "devDependencies": {
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-inline-source": "^2.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "pump": "^1.0.1"
+  }
+}
