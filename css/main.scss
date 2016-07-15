@@ -79,7 +79,7 @@ body {
             padding: 6px 12px;
             font-size: 28px;
             &:hover {
-                background-color: #eee;
+                color: $accent-color;
                 cursor: pointer;
             }
         }
