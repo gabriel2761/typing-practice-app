@@ -1,5 +1,5 @@
 var RandomWords = function() {
-    var lettersLength = 38;
+    var lettersLength = 36;
     var random = [];
 
     random[0] = "of to in is on by it or be at as an we us if my do no he up so pm am me re go de uk cd tv la pc ii ca al id co et st en oh ad ny dc ok ms hi hp eg ip pa tx ie el ma md fl mb mr il mm ed le az un mi th dr kb pp na os ex au fi nc po va rd sc se di km ga ac ft im vs ar mo sa xp eu cc wa dj cm wi ct da nj hr em iv rw ne du nt es gb bc pr fr aa mt oz mg ch sd rs ss ap nm mn nd op tn ce ab tm sp nh fm db ph ia pt ha ds ea lg nw ff ps ky br lo ml cs sf kg ut si mc lp ag vi ba cr pg ee ks sw hd er jr nv su sr nr mp li nl ya tr bb nz te av ra rc ec rm cf vt xx gm ri rt cp dd pl rf ak fe td sb ah sm wv ns ja bs bi ta gi ll cl ho gt sh ae hs rv pi ai ot yr ic mx gr ts ge ng pe tt xl dv tu fy rr ef ep lb jp bt af sl hb tc gp ir cv cb ti fc fw gs bp oo ni" +
